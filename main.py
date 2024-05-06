@@ -2,8 +2,8 @@ import streamlit as st
 # from tensorflow.keras.models import load_model
 from PIL import Image
 import pandas as pd
-from OlympicsAnalysis import data_preprocessing
-from OlympicsAnalysis import olympic_medal_analysis
+import data_preprocessing
+import olympic_medal_analysis
 import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
