@@ -1,5 +1,5 @@
 import streamlit as st
-from tensorflow.keras.models import load_model
+# from tensorflow.keras.models import load_model
 from PIL import Image
 import pandas as pd
 import data_preprocessing
@@ -42,7 +42,7 @@ with open("gradient_boost.pkl", "rb") as f:
     gb = pickle.load(f)
 # random_forest = pickle.load(open("random_forest_classifier_model.pkl","rb"))
 
-ann_model = load_model("ann_model.h5")
+# ann_model = load_model("ann_model.h5")
 
 def olympics_medal_predictor():
     # Load models and transformer    
