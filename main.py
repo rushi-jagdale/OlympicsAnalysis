@@ -2,8 +2,8 @@ import streamlit as st
 # from tensorflow.keras.models import load_model
 from PIL import Image
 import pandas as pd
-import data_preprocessing
-import olympic_medal_analysis
+from OlympicsAnalysis import data_preprocessing
+from OlympicsAnalysis import olympic_medal_analysis
 import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -12,12 +12,12 @@ import pickle
 # from sklearn.preprocessing import StandardScaler
 
 
-st.set_page_config(
-    page_title="Olympic",
-    page_icon='oly.png',
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+# st.set_page_config(
+#     page_title="Olympic",
+#     page_icon='oly.png',
+#     layout="wide",
+#     initial_sidebar_state="expanded"
+# )
 
 with open("data_transformer.pkl", "rb") as f:
         data_pipeline = pickle.load(f)
@@ -25,14 +25,14 @@ with open("data_transformer.pkl", "rb") as f:
 with open("logistic_regression_model.pkl", "rb") as f:
     logistic_regression = pickle.load(f)
 
-with open("randomforest.pkl", "rb") as f:
+with open("logistic_regression_model.pkl", "rb") as f:
     random_forest = pickle.load(f)
 
 with open("decision_tree_model.pkl", "rb") as f:
     decision_tree = pickle.load(f)
 
-with open("linear_regression_model.pkl", "rb") as f:
-    linear_regression = pickle.load(f)
+# with open("linear_regression_model.pkl", "rb") as f:
+#     linear_regression = pickle.load(f)
 
 with open("knn_model.pkl", "rb") as f:
     knn = pickle.load(f)
@@ -123,7 +123,7 @@ st.sidebar.image('https://images.livemint.com/img/2021/07/16/1600x900/Reuters_16
 
 # st.sidebar.image('https://e7.pngegg.com/pngimages/1020/402/png-clipart-2024-summer-olympics-brand-circle-area-olympic-rings-olympics-logo-text-sport.png')
 selected_option = st.sidebar.radio('Select an Option', ('Olympic_Medals','olympics_medal_predictor', 'Overall Analysis', 'Country-wise Analysis', 'Athlete wise Analysis'))
-st.image('OIP.jpeg', width=150)
+# st.image('OIP.jpeg', width=150)
 
 
 # Perform analysis based on user selection
